@@ -1,5 +1,3 @@
-from numpy import uint8
-from numpy import uint16
 from colorama import Fore
 
 """def rol1(value, count):

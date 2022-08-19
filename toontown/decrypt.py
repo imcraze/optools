@@ -1,7 +1,6 @@
 import sys
 import os
 
-import toonpp
 from .util import *
 
 from colorama import Fore
