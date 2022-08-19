@@ -4,9 +4,6 @@ import os
 from .util import *
 
 from colorama import Fore
-from numpy import uint8
-from numpy import uint16
-from numpy import uint64
 from ctypes import *
 
 
