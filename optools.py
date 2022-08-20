@@ -12,6 +12,7 @@ print(f"{Fore.YELLOW}optools by harold{Fore.RESET}")
 if sys.argv[1] == "decrypt":
     toontown.decrypt.__main__()
 
+# dead
 elif sys.argv[1] == "diff": # automatically get opcodes by comparing a toontown dump and vanilla python dump
     toontown.diff.t2()
 
