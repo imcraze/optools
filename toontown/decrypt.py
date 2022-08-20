@@ -112,7 +112,7 @@ def decryptMarshalDump(f, key):
         decFile.write(restOfMarshal)
 
 
-def decryptByte(byte, depth, key): # thank you Peach Dog for fixing my shitty python code
+def decryptByte(byte, depth, key): # thank you Nat for fixing my shitty python code
     
 
     keyNum = int.from_bytes(key, "little")
@@ -121,7 +121,7 @@ def decryptByte(byte, depth, key): # thank you Peach Dog for fixing my shitty py
     r2 = rol1((((depth >> 6) | 1) * (r1 ^ ((keyNum >> (r1 & 0x38)) ))) & 0xFF, 5) 
     r3 = rol1((((2 * depth) | 1) * (((keyNum >> (r2 & 0x38))) ^ r2)) & 0xFF , 5) 
 
-    ret = (((keyNum >> (r3 & 0x38)) ) ^ r3) & 0xFF
+    ret = (((keyNum >> (r3 & 0x38))) ^ r3) & 0xFF
 
     if depth % 2:
         ret = (0x89 * ret - 1) & 0xff

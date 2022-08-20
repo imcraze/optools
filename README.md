@@ -13,8 +13,5 @@ Side note, the decrypter only takes proprietary keys.
 - `colorama`
 - `my dumper?`
 
-## Decrypter
-Due to this project being a work-in-progress, the decryptor actually only half works. Toontown Rewritten's bytecode encryption is a massive pain to fully decrypt.
-
 ## Roadmap
 - Full decompiler?
