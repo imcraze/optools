@@ -19,6 +19,8 @@ def __main__():
 
     if len(sys.argv) > 3:
         key = sys.argv[3]
+    else:
+        key = farg + ".key"
 
     with open(farg, "rb") as f:
         if key != None:
@@ -110,16 +112,16 @@ def decryptMarshalDump(f, key):
         decFile.write(restOfMarshal)
 
 
-def decryptByte(byte, depth, key): # TODO: once the surpassing a certain depth, the decryption no longer works due to the byte exceeding 0xFF, debug to figure what toontown does in this situation
+def decryptByte(byte, depth, key): # thank you Peach Dog for fixing my shitty python code
     
 
     keyNum = int.from_bytes(key, "little")
     
-    r1 = rol1(byte, 5) & 0xff
-    r2 = rol1(((depth >> 6) | 1) * (r1 ^ ((keyNum >> (r1 & 0x38)) & 0xff)), 5) & 0xff
-    r3 = rol1(((2 * depth) | 1) * (((keyNum >> (r2 & 0x38)) & 0xff) ^ r2) & 0xff, 5) & 0xff
+    r1 = rol1(byte, 5) 
+    r2 = rol1((((depth >> 6) | 1) * (r1 ^ ((keyNum >> (r1 & 0x38)) ))) & 0xFF, 5) 
+    r3 = rol1((((2 * depth) | 1) * (((keyNum >> (r2 & 0x38))) ^ r2)) & 0xFF , 5) 
 
-    ret = (((keyNum >> (r3 & 0x38)) & 0xff) ^ r3)
+    ret = (((keyNum >> (r3 & 0x38)) ) ^ r3) & 0xFF
 
     if depth % 2:
         ret = (0x89 * ret - 1) & 0xff

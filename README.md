@@ -1,6 +1,6 @@
 # Optools :hammer_and_wrench:
 Optools is a toolset intended to aid tinkering with Toontown Rewritten's custom bytecode format.
-Side note, the decryptor only takes proprietary keys.
+Side note, the decrypter only takes proprietary keys.
 
 ## Notes
 - By the time this repository, this is probably outdated? It shouldn't be too hard to fix with a little bit of knowledge on reverse engineering.
@@ -13,5 +13,8 @@ Side note, the decryptor only takes proprietary keys.
 - `colorama`
 - `my dumper?`
 
-## Decryptor
+## Decrypter
 Due to this project being a work-in-progress, the decryptor actually only half works. Toontown Rewritten's bytecode encryption is a massive pain to fully decrypt.
+
+## Roadmap
+- Full decompiler?
